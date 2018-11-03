@@ -1,0 +1,41 @@
+#
+ # indexView.en_GB.yml
+ # 
+ # Copyright 2014 Joaquin Sanchez <jooaco.s@gmail.com>
+ #
+ # This program is free software; you can redistribute it and/or modify
+ # it under the terms of the GNU General Public License as published by
+ # the Free Software Foundation; either version 2 of the License, or
+ # (at your option) any later version.
+ # 
+ # This program is distributed in the hope that it will be useful,
+ # but WITHOUT ANY WARRANTY; without even the implied warranty of
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ # GNU General Public License for more details.
+ # 
+ # You should have received a copy of the GNU General Public License
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ # MA 02110-1301, USA.
+ # 
+ #
+#
+'pageTitle': Generate modules - CRUD modules generator
+'title': Generate CRUD modules for a bundle.
+'aviso 1': "Important warning: This bundle assume that all your bundles are installed under src/ symfony root directory; as the framework suggests."
+'aviso 2': It will be necessary for a short time to give write permissons to the following directories, 'Controller', 'Form', 'Resources/config' y 'Resources/views' on the bundle you are going to select.
+'entidades': Entities (*)
+'selec entid': Select entity
+'bund': Bundles (*)
+'selec bund': Select bundle
+'submit': Submit
+'cancel': Cancel
+'new': New
+'edit': Edit
+'delete': Delete
+'list': List
+'tools': Tools
+'show': Show
+'mandatory': Fields marked with an asterisk %ast% are mandatory
+'conf-title': Are you sure?
+'confirm': Are you sure you wish delete this?

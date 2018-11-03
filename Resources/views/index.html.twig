@@ -1,0 +1,95 @@
+{#
+ * index.html.twig
+ * 
+ * Copyright 2014 Joaquin Sanchez <jooaco.s@gmail.com>
+ * 
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.
+ * 
+ * 
+ #}
+<html>
+    <head>
+        <title>{{ 'pageTitle'|trans({}, 'indexView') }}</title>
+        {% block js %}
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+        <script>
+        function sub() {
+            var url = $('#form1').attr('action');
+
+            if($('.bundles').val() != 0) {
+                $.post(url, { bund: $('.bundles').val() }).done(function(content){
+                    $('#response').html(content);
+                });
+            }
+        };
+
+        $(function() {
+            $('.bundles').change(function() {
+                sub();
+            });
+
+            $('#response').change(function() {
+                $('.entidad').val($(this).val());
+            });
+        });
+        </script>
+        {% endblock %}
+    </head>
+    <body>
+        {% block content %}
+
+        {% for flashMessage in app.session.flashbag.get('notice') %}
+            <div class="flash-notice"><div id="success">
+                {{ flashMessage }}
+            </div></div>
+        {% endfor %}
+
+        {% for flashMessage in app.session.flashbag.get('error') %}
+            <div class="flash-notice"><div id="error">
+                {{ flashMessage }}
+            </div></div>
+        {% endfor %}
+
+        <div id="required">{{ 'aviso 1'|trans({}, 'indexView') }}</div>
+
+        <div id="required">{{ 'aviso 2'|trans({}, 'indexView') }}</div>
+
+        {{ form_start(form, {'id': 'form1'}) }}
+            <table cellspacing="5%" cellpadding="5%">
+                <tr><th colspan="2">{{ 'title'|trans({}, 'indexView') }}</th></tr>
+                <tr>
+                    <td>{{ form_label(form.bundles) }}</td><td>{{ form_widget(form.bundles) }}</td>
+                    <td>{{ form_label(form.entidad) }}</td><td>{{ form_widget(form.entidad) }}</td>
+                </tr>
+                <tr>
+                    <td>{{ 'entidades'|trans({}, 'indexView') }}</td>
+                    <td>
+                        <select id="response" required>
+                            <option value="0">{{ 'selec entid'|trans({}, 'indexView') }}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>{{ form_widget(form.save) }}&nbsp;{{ form_widget(form.cancel) }}</td>
+                </tr>
+            </table>
+        {{ form_end(form) }}
+    {% endblock %}
+    </body>
+</html>
+    

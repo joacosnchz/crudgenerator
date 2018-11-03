@@ -1,0 +1,20 @@
+{% block content %}
+    <style>
+        #required { color: red; }
+    </style>
+
+    {{ form_start(form) }}
+    <table>
+        {% for form in form %}
+            <tr><td>{{ form_label(form) }}</td><td>{{ form_widget(form) }}</td></tr>
+        {% endfor %}
+    </table>
+    
+    <hr>
+    
+    Fields marked with an asterisk<span id="required">(*)</span> are mandatory<br />
+    <input type="submit" value="Submit" />
+    <input type="reset" value="Cancel" />
+    {{ form_end(form) }}
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% block content %}
+    <style>
+        .bigspace {
+            height: 10px;
+        }
+    </style>
+    
+    <table class="resp" cellpadding="5">
+        <tr><th colspan="5"><h3>Lista</h3></th></tr>
+    </table>
+    
+    <fieldset>
+        <legend>Herramientas</legend>
+        <table class="resp">
+            <tr>
+                <td><button name="nuevo" onclick="window.location='{{ path(nuevoPath) }}'" />Nuevo</button></td>
+                <td><button id="borrar">Borrar</button></td>
+                <td><button id="editar">Editar</button></td>
+                <td><button id="selectAll">Seleccionar todo</button></td>
+            </tr>
+        </table>
+    </fieldset>
+                
+    <div class='bigspace'></div><div class='bigspace'></div>
+    
+    <form name="list00" id="myform" action="#">
+        <table class="resp" rules="rows" border="1" class="listado" bordercolor="#808080" frame="below" cellpadding="5px" name="table">
+            <tr id="option"><td>#</td><td><input type="checkbox" name="Check_ctr" value="yes" onClick="checkAll(document.list00, this)"></td>{% for item in classMeta.fieldNames %}{% if item != 'id' %}<td>{{ item|capitalize }}</td>{% endif %}{% endfor %}</tr>
+            addContentCodeHere
+        </table>
+    </form>
+            
+    Mostrar: <form name="{{ entity }}" action="{{ path(showPath) }}" method="POST"><input id="{{ entity }}" name="{{ entity }}" value="{{ app.session.get(entity) }}" size="1" maxlength="3"></form>
+
+    <div class="wrapper-pages">
+        addPagesContentHere
+    </div>
+{% endblock %}

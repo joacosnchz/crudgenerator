@@ -1,0 +1,34 @@
+#
+ # domain.en.yml
+ # 
+ # Copyright 2014 Joaquin Sanchez <jooaco.s@gmail.com>
+ #
+ # This program is free software; you can redistribute it and/or modify
+ # it under the terms of the GNU General Public License as published by
+ # the Free Software Foundation; either version 2 of the License, or
+ # (at your option) any later version.
+ # 
+ # This program is distributed in the hope that it will be useful,
+ # but WITHOUT ANY WARRANTY; without even the implied warranty of
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ # GNU General Public License for more details.
+ # 
+ # You should have received a copy of the GNU General Public License
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ # MA 02110-1301, USA.
+ # 
+ #
+#
+'correct notice': The CRUD modules for the bundle %bundle% have been created successfully.
+'error seleccionar bundle': Please, select a bundle from the list.
+'error seleccionar entidad': Please, select an entity from the list.
+'error no entidades': On %bundle% there is no entity defined.
+'error no crear controller': We weren't able to create a controller for the functions.
+'error permisos carpeta': We weren't able to write in %directory%. Please, give for a short time write permissons for we to create the CRUD modules.
+'backup filename': We have made a backup for %filename% and created a new one.
+'persistence': Correct persistence
+'edition': Correct edition
+'delete': Correct delete
+'create directory': Directory %directory% has been created.
+'invalid bundle': The selected entity is not valid. Please, it must be like [BundleName]:[EntityName]

@@ -1,0 +1,1 @@
+Search.setIndex({envversion:42,terms:{index:1,search:1,php:0,bar:[],name:0,modul:1,baz:[],content:1,asd:[],gener:0,consol:0,app:0,foo:[],page:1,crudmodul:0},objtypes:{},objnames:{},filenames:["index","index_bak"],titles:["&lt;no title&gt;","Welcome to ModsGenerator&#8217;s documentation!"],objects:{},titleterms:{modsgener:1,tabl:1,document:1,indic:1,welcom:1}})

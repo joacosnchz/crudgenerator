@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Documentación español &mdash; ModsGenerator 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="ModsGenerator 1.0 documentation" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="index_bak.html">ModsGenerator 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="documentacion-espanol">
+<h1>Documentación español<a class="headerlink" href="#documentacion-espanol" title="Permalink to this headline">¶</a></h1>
+<p>Esta es la documentación oficial para <strong>CRUDModsGeneratorBundle</strong></p>
+<div class="section" id="indice">
+<h2>Indice<a class="headerlink" href="#indice" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Instalación</li>
+<li>Modo de uso</li>
+<li>Notas</li>
+</ol>
+<div class="section" id="instalacion">
+<h3>Instalacion<a class="headerlink" href="#instalacion" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>Descargue el bundle, puede hacerlo de dos formas:</dt>
+<dd><ol class="first last arabic">
+<li><dl class="first docutils">
+<dt>Clonando con git:</dt>
+<dd><p class="first last"><tt class="docutils literal"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/joacosnchz/ModsGeneratorBundle.git</span></tt></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Descargando desde github:</dt>
+<dd><img alt="_images/download.png" class="first last" src="_images/download.png" />
+</dd>
+</dl>
+</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><p class="first">Copie la carpeta ModsGeneratorBundle/ descargada a /src/DSNEmpresas/ModsGenerator/ en su carpeta de Symfony2.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Registre el bundle en app/<em>AppKernel.php</em> en Symfony2:</dt>
+<dd><div class="first last highlight-php"><div class="highlight"><pre><span class="x">new DSNEmpresas\ModsGenerator\ModsGeneratorBundle\ModsGeneratorBundle(),</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p class="first">Listo, bundle instalado.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="modo-de-uso">
+<h3>Modo de uso<a class="headerlink" href="#modo-de-uso" title="Permalink to this headline">¶</a></h3>
+<p>Puede usar este bundle de dos formas:</p>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>La mas recomendada es desde consola:</dt>
+<dd><p class="first"><tt class="docutils literal"><span class="pre">php</span> <span class="pre">app/console</span> <span class="pre">generate:crudmodules</span> <span class="pre">[name]</span></tt></p>
+<dl class="docutils">
+<dt>Esto es un comando más de su consola de Symfony2, donde el parámetro <strong>name</strong> debe ser de la forma:</dt>
+<dd><p class="first last"><tt class="docutils literal"><span class="pre">[Nombre</span> <span class="pre">de</span> <span class="pre">bundle]:[Nombre</span> <span class="pre">de</span> <span class="pre">entidad]</span></tt></p>
+</dd>
+</dl>
+<p>De la misma forma con la cual Symfony busca repositorios, debe cumplir con las siguientes condiciones:</p>
+<ul class="last simple">
+<li>Nombre de bundle debe ser un bundle registrado en <em>AppKernel.php</em>.</li>
+<li>Nombre de entidad debe ser una entidad del bundle, dentro de la carpeta <em>Entity/</em> de este bundle.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>La segunda forma es por web, este bundle incluye su versión grafica la cual es algo más complicada.</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Debe incluir el routing del bundle en app/config/routing.yml:</dt>
+<dd><div class="first last highlight-yml"><div class="highlight"><pre>mods_generator:
+    resource: &quot;@ModsGeneratorBundle/Resources/config/routing.yml&quot;
+    prefix:   /
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p class="first">Al bundle del cual quiere generar los modulos ABM, debe dar permisos de escritura a los directorios Controller, Form, Resources, Resources/views, Resources/config.</p>
+</li>
+<li><p class="first">Ingrese a la url <em>/modsgenerator/new</em> en syfmony y completando el formulario obtendrá los modulos ABM para el bundle seleccionado.</p>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="notas">
+<h3>Notas<a class="headerlink" href="#notas" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><dl class="first docutils">
+<dt>Este bundle necesita que se encuentre instalado el siguiente bundle:</dt>
+<dd><p class="first last"><a class="reference external" href="https://github.com/makerlabs/PagerBundle">PagerBundle</a></p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Este bundle genera backups de los siguientes archivos si es que existen y los sobreescribe:</dt>
+<dd><ol class="first last arabic simple">
+<li>[bundle seleccionado]/Controller/ModsController.php</li>
+<li>[bundle seleccionado]/Form/[entidad seleccionada]Type.php</li>
+<li>[bundle seleccionado]/Resources/config/routing.yml</li>
+<li>[bundle seleccionado]/Resources/views/CRUD/insert[enitdad seleccionada].html.twig</li>
+<li>[bundle seleccionado]/Resources/views/CRUD/edit[enitdad seleccionada].html.twig</li>
+<li>[bundle seleccionado]/Resources/views/CRUD/show[enitdad seleccionada].html.twig</li>
+<li>[bundle seleccionado]/Resources/views/CRUD/showVacio.html.twig</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><p class="first">Los backups se guardan en el mismo directorio donde están los archivos con extensión .bak</p>
+</li>
+<li><dl class="first docutils">
+<dt>Las url que crea el bundle son de la siguiente forma:</dt>
+<dd><ol class="first last arabic simple">
+<li>/[entidad seleccionada]/new - para la persistencia a la base de datos.</li>
+<li>/[entidad seleccionada]/edit/{id} - para la edición de registros de la base de datos mediante su id.</li>
+<li>/[entidad seleccionada]/show/{page} - para el listado de los registros de la entidad.</li>
+<li>/[entidad seleccionada]/delete/{id} - para el borrado de registros de la base de datos mediante su id.</li>
+</ol>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index_bak.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Documentación español</a><ul>
+<li><a class="reference internal" href="#indice">Indice</a><ul>
+<li><a class="reference internal" href="#instalacion">Instalacion</a></li>
+<li><a class="reference internal" href="#modo-de-uso">Modo de uso</a></li>
+<li><a class="reference internal" href="#notas">Notas</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/espanol.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="index_bak.html">ModsGenerator 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, jsanchez.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

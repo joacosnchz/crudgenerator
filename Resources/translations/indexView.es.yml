@@ -1,0 +1,41 @@
+#
+ # indexView.es.yml
+ # 
+ # Copyright 2014 Joaquin Sanchez <jooaco.s@gmail.com>
+ #
+ # This program is free software; you can redistribute it and/or modify
+ # it under the terms of the GNU General Public License as published by
+ # the Free Software Foundation; either version 2 of the License, or
+ # (at your option) any later version.
+ # 
+ # This program is distributed in the hope that it will be useful,
+ # but WITHOUT ANY WARRANTY; without even the implied warranty of
+ # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ # GNU General Public License for more details.
+ # 
+ # You should have received a copy of the GNU General Public License
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ # MA 02110-1301, USA.
+ # 
+ #
+#
+'pageTitle': Generar modulos - Generador de modulos ABM
+'title': Generar modulos ABM de un bundle.
+'aviso 1': "Aviso importante: Este bundle asume que todos sus bundles están instalados en la carpeta src/ del directorio raiz de symfony; tal como la estructura del framework lo sugiere."
+'aviso 2': Momentaneamente será necesario que de permisos de escritura a los directorios 'Controller', 'Form', 'Resources/config' y 'Resources/views' en el bundle a seleccionar.
+'entidades': Entidades (*)
+'selec entid': Seleccione entidad
+'bund': Bundles (*)
+'selec bund': Seleccione bundle
+'submit': Aceptar
+'cancel': Cancelar
+'new': Nuevo
+'edit': Editar
+'delete': Borrar
+'list': Lista
+'tools': Herramientas
+'show': Mostrar
+'mandatory': Los campos marcados con un asterisco %ast% son obligatorios
+'conf-title': ¿Está seguro?
+'confirm': ¿Está seguro que desea borrar?
